@@ -4,6 +4,9 @@ import com.ambev.projetopratico4.model.Produto;
 import com.ambev.projetopratico4.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+import java.util.Optional;
+
 public class ProdutoService {
     private final ProdutoRepository produtoRepository;
 
@@ -16,4 +19,15 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
+    public Optional<Produto> findById(String id) {
+        return produtoRepository.findById(id);
+    }
+
+    public List<Produto> consultarPorNome(String nome) {
+        return produtoRepository.findByNome(nome);
+    }
+
+    public List<Produto> consultarTodos() {
+        return produtoRepository.findAll();
+    }
 }
