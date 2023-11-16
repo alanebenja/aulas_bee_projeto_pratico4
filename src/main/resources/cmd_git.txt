@@ -1,3 +1,4 @@
+#Comandos git
 git stash;
 git stash apply;
 git config --global alias.add-all 'add -A';
